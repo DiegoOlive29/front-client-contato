@@ -2,6 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     :root{
+        --textTop       : #44d2ce;
+        --detailcolor   : #b7ffff;
+        --blueop        : #7ee9e7;
+        --hoverbutton   :   #00a7a2
     }
     *{
         margin          : 0;
@@ -21,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
         max-width       : 100%;
     }
     body{
-        background-color: #2e2e2e;
+        background-color: #000;
         color           : white;
         height          : 100vh;
         width           : 100%;
