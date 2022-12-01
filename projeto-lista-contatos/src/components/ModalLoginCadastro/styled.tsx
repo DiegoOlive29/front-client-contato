@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const MainContainer = styled.main`
   background: rgb(2,0,36);
-background: linear-gradient(0deg, var(--bodymodal2) 0%, var(--bodymodal1) 50%);
-  height                : 500px;
+  background: linear-gradient(0deg, var(--bodymodal2) 0%, var(--bodymodal1) 50%);
   width                 : 350px;
   border                : var(--detailcolor) 4px solid;
   border-radius         : 20px;
@@ -13,13 +12,13 @@ background: linear-gradient(0deg, var(--bodymodal2) 0%, var(--bodymodal1) 50%);
   align-items           : center;
   justify-content       : flex-start;
   gap                   : 10px;
-  
+  padding-bottom        : 30px;
  
 `;
 
 export const HeaderContainer = styled.div`
   background-color      : var(--textTop);
-  height                : 80px;
+  height                : 60px;
   width                 : 100%;
   color                 : var(--whitetext);
   font-family           : 'Didot';
@@ -30,12 +29,13 @@ export const HeaderContainer = styled.div`
   align-items           : center;
   justify-content       : center;
   border-radius         : 15px 15px 0px 0px ;
+  
 
   
 `
 
 export const ButtonCamps = styled.div`
-  height                : 50px;
+  height                : 30px;
   width                 : 90%;
   display               : flex;
   flex-direction        : row;
