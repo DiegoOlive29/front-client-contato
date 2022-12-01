@@ -1,29 +1,37 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.main`
-  background-color      : #202020;
+  background: rgb(2,0,36);
+background: linear-gradient(0deg, var(--bodymodal2) 0%, var(--bodymodal1) 50%);
   height                : 500px;
   width                 : 350px;
   border                : var(--detailcolor) 4px solid;
   border-radius         : 20px;
-  box-shadow            : 0px 0px 15px 12px var(--detailcolor);
+  box-shadow            : 0px 0px 300px 12px var(--textTop);
   display               : flex;
   flex-direction        : column;
   align-items           : center;
   justify-content       : flex-start;
-  padding               : 30px 10px;
-
+  gap                   : 10px;
   
+ 
 `;
 
 export const HeaderContainer = styled.div`
-    height              : 50px;
-    width               : 90%;
-    color               : var(--textTop);
-    font-family         : 'Didot';
-    font-size           : 20px;
-    border-radius       : 5px;
+  background-color      : var(--textTop);
+  height                : 80px;
+  width                 : 100%;
+  color                 : var(--whitetext);
+  font-family           : 'Didot';
+  font-weight           : bold;
+  font-size             : 20px;
+  border-radius         : 5px;
+  display               : flex;
+  align-items           : center;
+  justify-content       : center;
+  border-radius         : 15px 15px 0px 0px ;
 
+  
 `
 
 export const ButtonCamps = styled.div`
@@ -33,19 +41,22 @@ export const ButtonCamps = styled.div`
   flex-direction        : row;
   justify-content       : space-around;
   align-items           : center;
+  
 
 `
 export const ButtonForms =styled.button`
   height                : 35px;
   width                 : 100px;
   padding               : 5px;
-  background-color      : var(--blueop);
+  background-color      : var(--orangeDetail);
   border                : none;
-  border-radius         : 5px;
+  border-radius         : 15px;
   font-size             : 16px;
+  color                 : var(--whitetext);
+  
   :hover{
-    background-color    : var(--hoverbutton);
     transition          : .3s;
-    color               : white;
+    background-color    : var(--hoverbutton);
+
   }
 `
