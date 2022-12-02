@@ -13,6 +13,7 @@ export const MainContainer = styled.main`
   justify-content       : flex-start;
   gap                   : 10px;
   padding-bottom        : 30px;
+  padding-top           : 10px
  
 `;
 

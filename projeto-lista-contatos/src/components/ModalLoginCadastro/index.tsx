@@ -4,7 +4,7 @@ import FormCadastro from "../FormCadastro"
 import FormLogin from "../FormLogin"
 
 const ModalLoginCadastro=() =>{
-    const [form, setForm]= useState<boolean>(true)
+    const [form, setForm]= useState<boolean>(false)
     
     return (
        
