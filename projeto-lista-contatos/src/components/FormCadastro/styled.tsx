@@ -47,3 +47,8 @@ export const ButtonFormsEnvio =styled.button`
 
         }
 `
+export const Error = styled.span`
+  
+  font-size         : 10px;
+  color             : var(--redError);
+`;
