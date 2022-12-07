@@ -13,13 +13,13 @@ const ModalLoginCadastro=() =>{
         
         <ButtonCamps>
             
-            <ButtonForms>Login</ButtonForms>
+            <ButtonForms onClick={()=> setForm(true)}>Login</ButtonForms>
             
-            <ButtonForms>Cadastro</ButtonForms>
+            <ButtonForms onClick={()=> setForm(false)}>Cadastro</ButtonForms>
 
         </ButtonCamps>
 
-        {form === true ? (<FormLogin/>) : (<FormCadastro/>)}
+        {form === true ? (<FormLogin setForm={setForm}/>) : (<FormCadastro setForm={setForm}/>)}
     </MainContainer>
 
     )
