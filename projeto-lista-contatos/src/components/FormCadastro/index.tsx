@@ -19,12 +19,10 @@ const FormCadastro = ({setForm}:CadastroFormProps) => {
   const {register,handleSubmit, formState:{ errors}}=useForm<PostUser>({resolver:yupResolver(formSchema)})
 
   const handleSubmitPost =async (data:PostUser)=>{
-    console.log(data)
 
     const user = postUser(data)
 
-    console.log(user)
-
+  
     setForm(true)
   }
 

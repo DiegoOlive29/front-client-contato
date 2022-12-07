@@ -19,7 +19,7 @@ const ModalLoginCadastro=() =>{
 
         </ButtonCamps>
 
-        {form === true ? (<FormLogin/>) : (<FormCadastro setForm={setForm}/>)}
+        {form === true ? (<FormLogin setForm={setForm}/>) : (<FormCadastro setForm={setForm}/>)}
     </MainContainer>
 
     )
