@@ -15,6 +15,7 @@ export interface ResposneLogin{
 export async function LoginUser(dataPost:Postlogin):Promise<ResposneLogin> {
 
     const {data} = await api.post('login',dataPost)
+    
 
     console.log(data)
 

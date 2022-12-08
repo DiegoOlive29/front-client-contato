@@ -6,9 +6,10 @@ import { LoginUser, Postlogin } from "../../service/loginUser";
 
 interface FormLoginProps{
     setForm:Function;
+    setlogado:Function;
   }
 
-const FormLogin=({setForm}:FormLoginProps) =>{
+const FormLogin=({setForm,setlogado}:FormLoginProps) =>{
     
   const formSchema = yup.object().shape({
    
@@ -21,10 +22,12 @@ const FormLogin=({setForm}:FormLoginProps) =>{
   const handleSubmitPost =async (data:Postlogin)=>{
     console.log(data)
 
-    const token = LoginUser(data)
+    const token = await LoginUser(data)
 
-    console.log(token)
+    localStorage.setItem("token",token.token)
 
+    
+    setlogado(true)
     setForm(true)
   }
 
@@ -38,7 +41,7 @@ const FormLogin=({setForm}:FormLoginProps) =>{
         <Error>{errors.email?.message}</Error>
 
         <label htmlFor="">Insira sua senha:</label>
-        <input type="text"  {...register('password')}/>
+        <input type="password"  {...register('password')}/>
         <Error>{errors.password?.message}</Error>
 
         <ButtonFormsEnvio>Logar</ButtonFormsEnvio>
