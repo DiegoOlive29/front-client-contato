@@ -1,28 +1,59 @@
-import { useState } from "react"
-import { HeaderContainer, MainContainer, ButtonCamps, ButtonForms } from "./styled"
-import FormCadastro from "../FormCadastro"
-import FormLogin from "../FormLogin"
+import { useState } from "react";
+import {
+  HeaderContainer,
+  MainContainer,
+  ButtonCamps,
+  ButtonForms,
+} from "./styled";
+import FormCadastro from "../FormCadastro";
+import FormLogin from "../FormLogin";
+import FormContact from "../CadastroContact";
+import { ResponsePost } from "../../service/createContact";
 
-const ModalLoginCadastro=() =>{
-    const [form, setForm]= useState<boolean>(false)
-    
-    return (
-       
-    <MainContainer>
-        <HeaderContainer>AGENDA DE CLIENTES</HeaderContainer>
-        
-        <ButtonCamps>
-            
-            <ButtonForms onClick={()=> setForm(true)}>Login</ButtonForms>
-            
-            <ButtonForms onClick={()=> setForm(false)}>Cadastro</ButtonForms>
+const ModalLoginCadastro = () => {
+  const [form, setForm] = useState<boolean>(false);
+  const [logado, setlogado] = useState<boolean>(false);
+  const [contact, setcontact] = useState<boolean>(false);
+  const [list, setDataList] = useState<ResponsePost[]>();
 
-        </ButtonCamps>
+  return (
+    <>
+      {logado === true ? (
+        <MainContainer>
+          <HeaderContainer>AGENDA DE CLIENTES</HeaderContainer>
 
-        {form === true ? (<FormLogin setForm={setForm}/>) : (<FormCadastro setForm={setForm}/>)}
-    </MainContainer>
+          <ButtonCamps>
+            <ButtonForms onClick={() => setcontact(true)}>
+              Cadastrar
+            </ButtonForms>
 
-    )
-}
+            <ButtonForms onClick={() => setcontact(false)}>Listar</ButtonForms>
+          </ButtonCamps>
+          {contact === true ? (
+            <FormLogin setlogado={setlogado} setForm={setForm} />
+          ) : (
+            <FormContact setcontact={setcontact} setDataList={setDataList} />
+          )}
+        </MainContainer>
+      ) : (
+        <MainContainer>
+          <HeaderContainer>AGENDA DE CLIENTES</HeaderContainer>
 
-export default ModalLoginCadastro
+          <ButtonCamps>
+            <ButtonForms onClick={() => setForm(true)}>Login</ButtonForms>
+
+            <ButtonForms onClick={() => setForm(false)}>Cadastro</ButtonForms>
+          </ButtonCamps>
+
+          {form === true ? (
+            <FormLogin setlogado={setlogado} setForm={setForm} />
+          ) : (
+            <FormCadastro setForm={setForm} />
+          )}
+        </MainContainer>
+      )}
+    </>
+  );
+};
+
+export default ModalLoginCadastro;

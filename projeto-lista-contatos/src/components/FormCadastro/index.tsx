@@ -20,9 +20,7 @@ const FormCadastro = ({setForm}:CadastroFormProps) => {
 
   const handleSubmitPost =async (data:PostUser)=>{
 
-    const user = postUser(data)
-
-  
+    postUser(data)  
     setForm(true)
   }
 
