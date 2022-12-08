@@ -22,7 +22,9 @@ Após o fazer o clone dos dois repositorios na sua maquina, faça os seguinte co
     TypeScript;
     Yup;
     Axios;
- 
+    CSS;
+    JS;
+
 
 ## Porta: 
     A aplicação por padrão roda na http://localhost:3000/
