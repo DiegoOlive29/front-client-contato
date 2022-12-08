@@ -1,14 +1,14 @@
 import {api} from '../utils/urls'
 
-export interface ResponsePost {
+export interface ResponseGetPost {
     id: string;
     name: string;
-    emial: string;
+    email: string;
     phone: string;
     isActive: boolean;
   }
 
-export async function getContacts(): Promise<ResponsePost[]>{
+export async function getContacts(): Promise<ResponseGetPost[]>{
   const token = localStorage.getItem("token");
  
   const { data } = await api.get("contact/user",{

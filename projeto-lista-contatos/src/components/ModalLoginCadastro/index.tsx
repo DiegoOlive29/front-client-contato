@@ -8,13 +8,14 @@ import {
 import FormCadastro from "../FormCadastro";
 import FormLogin from "../FormLogin";
 import FormContact from "../CadastroContact";
-import { ResponsePost } from "../../service/createContact";
+import ListContact from "../showContact";
+import { ResponseGetPost } from "../../service/getContact";
 
 const ModalLoginCadastro = () => {
   const [form, setForm] = useState<boolean>(false);
   const [logado, setlogado] = useState<boolean>(false);
   const [contact, setcontact] = useState<boolean>(false);
-  const [list, setDataList] = useState<ResponsePost[]>();
+  const [list, setDataList] = useState<ResponseGetPost[] | undefined>();
 
   return (
     <>
@@ -23,14 +24,14 @@ const ModalLoginCadastro = () => {
           <HeaderContainer>AGENDA DE CLIENTES</HeaderContainer>
 
           <ButtonCamps>
-            <ButtonForms onClick={() => setcontact(true)}>
+            <ButtonForms onClick={() => setcontact(false)}>
               Cadastrar
             </ButtonForms>
 
-            <ButtonForms onClick={() => setcontact(false)}>Listar</ButtonForms>
+            <ButtonForms onClick={() => setcontact(true)}>Listar</ButtonForms>
           </ButtonCamps>
           {contact === true ? (
-            <FormLogin setlogado={setlogado} setForm={setForm} />
+            <ListContact setDataList={setDataList} list={list} />
           ) : (
             <FormContact setcontact={setcontact} setDataList={setDataList} />
           )}
